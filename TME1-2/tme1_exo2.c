@@ -81,13 +81,13 @@ void main(){
 
 	//fprintf(f, "Algo1 Algo2\n");
 
-	for (int i = 1; i < 20; i++){
+	for (int i = 1; i < 5000; i++){
 
 		alloue_tableau2(&t, i);
 		remplir_tableau(t, i, 10);
 
 		temp_initial = clock();
-		somme_carre(tab, 4);
+		somme_carre(tab, i);
 		temps_final = clock();
 
 		temps_cpu = ((double)(temps_final - temp_initial)) / CLOCKS_PER_SEC;
@@ -95,7 +95,7 @@ void main(){
 		fprintf(f, "%d %f ", i, temps_cpu);
 
 		temp_initial = clock();
-		somme_carre_opt(tab, 4);
+		somme_carre_opt(tab, i);
 		temps_final = clock();
 
 		temps_cpu = ((double)(temps_final - temp_initial)) / CLOCKS_PER_SEC;
